@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pisang Keju Lumer - Menu</title>
+
+    <!-- Tailwind CSS + DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-yellow-50 via-white to-orange-50 scroll-smooth"
+  >
+    <!-- NAVBAR -->
+    <div
+      class="navbar fixed top-0 z-50 bg-orange-100 backdrop-blur shadow-md px-4 md:px-8"
+    >
+      <div class="flex-1">
+        <a class="text-2xl font-extrabold text-orange-500"
+          >🍌 Pisang Keju Lumer</a
+        >
+      </div>
+
+      <!-- MOBILE MENU (HAMBURGER) -->
+      <div class="flex-none md:hidden">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+          >
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="/tentang.html">Tentang</a></li>
+            <li><a href="/kontak.html">Kontak</a></li>
+            <li>
+              <a
+                href="/pesan.html"
+                class="btn btn-outline btn-warning font-extrabold"
+                >Pesan Sekarang</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <div class="flex-none hidden md:flex flex-1 justify-center">
+        <ul class="menu menu-horizontal gap-6 text-lg font-extrabold">
+          <li><a href="/" class="hover:text-orange-500">Home</a></li>
+          <li><a href="/menu.html" class="hover:text-orange-500">Menu</a></li>
+          <li>
+            <a href="/tentang.html" class="hover:text-orange-500">Tentang</a>
+          </li>
+          <li>
+            <a href="/kontak.html" class="hover:text-orange-500">Kontak</a>
+          </li>
+          <li>
+            <a
+              href="/pesan.html"
+              class="btn btn-outline btn-warning font-extrabold"
+              >Pesan Sekarang</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <section id="menu" class="py-24 bg-orange-50 animate-fade">
+      <h2 class="text-center text-4xl font-extrabold mb-12">
+        Menu Favorit 🍫🧀
+      </h2>
+      <div
+        class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8 animate-float"
+      >
+        <div class="card bg-white shadow-xl hover:-translate-y-2 transition">
+          <figure>
+            <img src="images/kejuori.jpg" alt="Original Keju" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Original Keju</h3>
+            <p>Rasa klasik dengan keju lumer.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-orange-500">Rp 10.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-white shadow-xl hover:-translate-y-2 transition">
+          <figure>
+            <img src="images/coklatkeju.jpg" alt="Coklat Keju" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Coklat Keju</h3>
+            <p>Manis coklat berpadu keju.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-orange-500">Rp 12.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-white shadow-xl hover:-translate-y-2 transition">
+          <figure>
+            <img src="images/matcha.jpg" alt="Matcha" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Matcha</h3>
+            <p>Matcha lembut & creamy.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-orange-500">Rp 13.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-white shadow-xl hover:-translate-y-2 transition">
+          <figure>
+            <img src="images/mixtoping.jpg" alt="Mix Topping" />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Mix Topping</h3>
+            <p>Keju, coklat, matcha dan susu melimpah.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-orange-500">Rp 15.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="bg-orange-100 text-gray-700">
+      <div class="max-w-6xl mx-auto px-8 py-12 grid gap-8 md:grid-cols-3">
+        <!-- KONTAK -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Kontak Kami
+          </h3>
+          <p><i class="fi fi-rr-marker"></i> Pisang Keju Lumer</p>
+          <p><i class="fi fi-rr-headset"></i> 089508646021</p>
+          <p><i class="fi fi-rr-envelope"></i> pisangkejulumer@gmail.com</p>
+        </div>
+
+        <!-- SOSIAL MEDIA -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Sosial Media
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-instagram"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-facebook"></i> Facebook</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-whatsapp"></i> WhatsApp</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- MAPS -->
+        <div>
+          <iframe
+            class="w-full h-40 rounded-xl"
+            src="https://www.google.com/maps?q=pekalongan&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <div class="text-center py-4 text-sm">
+        © 2025 Pisang Keju Lumer • UMKM Lokal Indonesia
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

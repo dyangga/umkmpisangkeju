@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pisang Keju Lumer - Kontak</title>
+
+    <!-- Tailwind CSS + DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-yellow-50 via-white to-orange-50 scroll-smooth"
+  >
+    <!-- NAVBAR -->
+    <div
+      class="navbar fixed top-0 z-50 bg-orange-100 backdrop-blur shadow-md px-4 md:px-8"
+    >
+      <div class="flex-1">
+        <a class="text-2xl font-extrabold text-orange-500"
+          >🍌 Pisang Keju Lumer</a
+        >
+      </div>
+
+      <!-- MOBILE MENU (HAMBURGER) -->
+      <div class="flex-none md:hidden">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+          >
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="/tentang.html">Tentang</a></li>
+            <li><a href="/kontak.html">Kontak</a></li>
+            <li>
+              <a
+                href="/pesan.html"
+                class="btn btn-outline btn-warning font-extrabold"
+                >Pesan Sekarang</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <div class="flex-none hidden md:flex flex-1 justify-center">
+        <ul class="menu menu-horizontal gap-6 text-lg font-extrabold">
+          <li><a href="/" class="hover:text-orange-500">Home</a></li>
+          <li><a href="/menu.html" class="hover:text-orange-500">Menu</a></li>
+          <li>
+            <a href="/tentang.html" class="hover:text-orange-500">Tentang</a>
+          </li>
+          <li>
+            <a href="/kontak.html" class="hover:text-orange-500">Kontak</a>
+          </li>
+          <li>
+            <a
+              href="/pesan.html"
+              class="btn btn-outline btn-warning font-extrabold"
+              >Pesan Sekarang</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="pesan" class="py-24 bg-orange-50 animate-fade">
+      <h2 class="text-4xl font-extrabold text-center mb-10">Kontak Kami 📦</h2>
+
+      <div class="max-w-xl mx-auto bg-white shadow-xl rounded-2xl p-8">
+        <!-- KONTAK & NEWSLETTER -->
+        <form id="contactForm" class="space-y-4">
+          <div>
+            <label class="label">Nama</label>
+            <input type="text" id="cNama" class="input input-bordered w-full" />
+            <small id="cErrNama" class="text-red-500 hidden">
+              Nama minimal 3 karakter
+            </small>
+          </div>
+
+          <div>
+            <label class="label">No HP / WhatsApp</label>
+            <input
+              type="tel"
+              id="cHp"
+              class="input input-bordered w-full"
+              placeholder="08xxxxxxxxxx"
+            />
+            <small id="cErrHp" class="text-red-500 hidden">
+              Nomor harus 10–13 digit dan hanya angka
+            </small>
+          </div>
+
+          <div>
+            <label class="label">Email</label>
+            <input
+              type="email"
+              id="cEmail"
+              class="input input-bordered w-full"
+            />
+            <small id="cErrEmail" class="text-red-500 hidden">
+              Format email tidak valid
+            </small>
+          </div>
+
+          <div>
+            <label class="label">Pesan</label>
+            <textarea
+              id="cPesan"
+              class="textarea textarea-bordered w-full"
+            ></textarea>
+            <small id="cErrPesan" class="text-red-500 hidden">
+              Pesan minimal 10 karakter
+            </small>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="newsletterCheck"
+              class="checkbox checkbox-warning"
+            />
+            <span>Berlangganan newsletter</span>
+          </div>
+
+          <button type="submit" class="btn btn-warning text-white w-full">
+            Kirim Pesan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <dialog id="contactSuccess" class="modal">
+      <div class="modal-box text-center">
+        <h3 class="font-bold text-lg">✅ Pesan Terkirim</h3>
+        <p class="py-4">
+          Terima kasih telah menghubungi kami.<br />
+          Newsletter: <span id="newsletterStatus"></span>
+        </p>
+        <div class="modal-action">
+          <button
+            class="btn btn-warning text-white"
+            onclick="contactSuccess.close()"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="bg-orange-100 text-gray-700">
+      <div class="max-w-6xl mx-auto px-8 py-12 grid gap-8 md:grid-cols-3">
+        <!-- KONTAK -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Kontak Kami
+          </h3>
+          <p><i class="fi fi-rr-marker"></i> Pisang Keju Lumer</p>
+          <p><i class="fi fi-rr-headset"></i> 089508646021</p>
+          <p><i class="fi fi-rr-envelope"></i> pisangkejulumer@gmail.com</p>
+        </div>
+
+        <!-- SOSIAL MEDIA -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Sosial Media
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-instagram"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-facebook"></i> Facebook</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-whatsapp"></i> WhatsApp</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- MAPS -->
+        <div>
+          <iframe
+            class="w-full h-40 rounded-xl"
+            src="https://www.google.com/maps?q=pekalongan&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <div class="text-center py-4 text-sm">
+        © 2025 Pisang Keju Lumer • UMKM Lokal Indonesia
+      </div>
+    </footer>
+
+    <script>
+      const cNama = document.getElementById("cNama");
+      const cHp = document.getElementById("cHp");
+      const cEmail = document.getElementById("cEmail");
+      const cPesan = document.getElementById("cPesan");
+      const newsletterCheck = document.getElementById("newsletterCheck");
+
+      const cErrNama = document.getElementById("cErrNama");
+      const cErrHp = document.getElementById("cErrHp");
+      const cErrEmail = document.getElementById("cErrEmail");
+      const cErrPesan = document.getElementById("cErrPesan");
+
+      const hpRegex = /^\d{10,13}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      newsletterCheck.addEventListener("change", () => {
+        if (newsletterCheck.checked) {
+          alert(
+            "📩 Terima kasih! Anda berhasil berlangganan newsletter Pisang Keju Lumer."
+          );
+        }
+      });
+      // REALTIME VALIDATION
+      cNama.addEventListener("input", () => {
+        cErrNama.classList.toggle("hidden", cNama.value.trim().length >= 3);
+      });
+
+      cHp.addEventListener("input", () => {
+        cHp.value = cHp.value.replace(/[^0-9]/g, "");
+        cErrHp.classList.toggle("hidden", hpRegex.test(cHp.value));
+      });
+
+      cEmail.addEventListener("input", () => {
+        cErrEmail.classList.toggle("hidden", emailRegex.test(cEmail.value));
+      });
+
+      cPesan.addEventListener("input", () => {
+        cErrPesan.classList.toggle("hidden", cPesan.value.trim().length >= 10);
+      });
+
+      // SUBMIT
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const valid =
+          cNama.value.trim().length >= 3 &&
+          hpRegex.test(cHp.value) &&
+          emailRegex.test(cEmail.value) &&
+          cPesan.value.trim().length >= 10;
+
+        if (valid) {
+          document.getElementById("newsletterStatus").textContent =
+            newsletterCheck.checked ? "Aktif" : "Tidak";
+
+          contactSuccess.showModal();
+          e.target.reset();
+        }
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

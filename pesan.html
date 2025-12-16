@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pisang Keju Lumer - Pesan</title>
+
+    <!-- Tailwind CSS + DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-yellow-50 via-white to-orange-50 scroll-smooth"
+  >
+    <!-- NAVBAR -->
+    <div
+      class="navbar fixed top-0 z-50 bg-orange-100 backdrop-blur shadow-md px-4 md:px-8"
+    >
+      <div class="flex-1">
+        <a class="text-2xl font-extrabold text-orange-500"
+          >🍌 Pisang Keju Lumer</a
+        >
+      </div>
+
+      <!-- MOBILE MENU (HAMBURGER) -->
+      <div class="flex-none md:hidden">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+          >
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="/tentang.html">Tentang</a></li>
+            <li><a href="/kontak.html">Kontak</a></li>
+            <li>
+              <a
+                href="/pesan.html"
+                class="btn btn-outline btn-warning font-extrabold"
+                >Pesan Sekarang</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <div class="flex-none hidden md:flex flex-1 justify-center">
+        <ul class="menu menu-horizontal gap-6 text-lg font-extrabold">
+          <li><a href="/" class="hover:text-orange-500">Home</a></li>
+          <li><a href="/menu.html" class="hover:text-orange-500">Menu</a></li>
+          <li>
+            <a href="/tentang.html" class="hover:text-orange-500">Tentang</a>
+          </li>
+          <li>
+            <a href="/kontak.html" class="hover:text-orange-500">Kontak</a>
+          </li>
+          <li>
+            <a
+              href="/pesan.html"
+              class="btn btn-outline btn-warning font-extrabold"
+              >Pesan Sekarang</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="pesan" class="py-24 bg-orange-50 animate-fade">
+      <h2 class="text-4xl font-extrabold text-center mb-10">
+        Form Pemesanan 📦
+      </h2>
+
+      <div class="max-w-xl mx-auto bg-white shadow-xl rounded-2xl p-8">
+        <form id="orderForm" class="space-y-4">
+          <div>
+            <label class="label">Nama Pemesan</label>
+            <input
+              type="text"
+              id="nama"
+              class="input input-bordered w-full"
+              placeholder="Masukkan nama"
+            />
+            <small id="errNama" class="text-red-500 hidden"
+              >Nama wajib diisi</small
+            >
+          </div>
+
+          <div>
+            <label class="label">Nomor WhatsApp</label>
+            <input
+              type="tel"
+              id="wa"
+              class="input input-bordered w-full"
+              placeholder="08xxxxxxxxxx"
+            />
+            <small id="errWa" class="text-red-500 hidden"
+              >Nomor WhatsApp wajib diisi</small
+            >
+          </div>
+
+          <div>
+            <label class="label">Pilih Menu (boleh lebih dari satu)</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="menu"
+                  value="Original Keju"
+                  class="checkbox checkbox-warning"
+                />
+                <span>Original Keju</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="menu"
+                  value="Coklat Keju"
+                  class="checkbox checkbox-warning"
+                />
+                <span>Coklat Keju</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="menu"
+                  value="Matcha Keju"
+                  class="checkbox checkbox-warning"
+                />
+                <span>Matcha Keju</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="menu"
+                  value="Full Topping"
+                  class="checkbox checkbox-warning"
+                />
+                <span>Full Topping</span>
+              </label>
+            </div>
+            <small id="errMenu" class="text-red-500 hidden"
+              >Pilih minimal 1 menu</small
+            >
+          </div>
+
+          <div>
+            <label class="label">Jumlah</label>
+            <input
+              type="number"
+              id="jumlah"
+              class="input input-bordered w-full"
+              min="1"
+              placeholder="Jumlah pesanan"
+            />
+            <small id="errJumlah" class="text-red-500 hidden"
+              >Jumlah minimal 1</small
+            >
+          </div>
+
+          <button type="submit" class="btn btn-warning text-white w-full">
+            Kirim Pesanan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- POPUP MODAL -->
+    <dialog id="successModal" class="modal">
+      <div class="modal-box text-center">
+        <h3 class="font-bold text-lg">🎉 Pesanan berhasil dibuat!</h3>
+        <p class="py-4">Terima kasih telah memesan Pisang Keju Lumer 🍌🧀</p>
+        <div class="modal-action">
+          <button
+            class="btn btn-warning text-white"
+            onclick="successModal.close()"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="bg-orange-100 text-gray-700">
+      <div class="max-w-6xl mx-auto px-8 py-12 grid gap-8 md:grid-cols-3">
+        <!-- KONTAK -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Kontak Kami
+          </h3>
+          <p><i class="fi fi-rr-marker"></i> Pisang Keju Lumer</p>
+          <p><i class="fi fi-rr-headset"></i> 089508646021</p>
+          <p><i class="fi fi-rr-envelope"></i> pisangkejulumer@gmail.com</p>
+        </div>
+
+        <!-- SOSIAL MEDIA -->
+        <div>
+          <h3 class="text-lg font-extrabold mb-4 text-orange-500">
+            Sosial Media
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-instagram"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-facebook"></i> Facebook</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                ><i class="fi fi-brands-whatsapp"></i> WhatsApp</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- MAPS -->
+        <div>
+          <iframe
+            class="w-full h-40 rounded-xl"
+            src="https://www.google.com/maps?q=pekalongan&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <div class="text-center py-4 text-sm">
+        © 2025 Pisang Keju Lumer • UMKM Lokal Indonesia
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
